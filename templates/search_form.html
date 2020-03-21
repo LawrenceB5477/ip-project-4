@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search for Movie</title>
+</head>
+<body>
+    <h3>Welcome <?php echo $_SESSION['displayname'];?></h3>
+    <a href="#" onclick="confirmLogout()">Logout</a>
+    <header>
+        myMovies Xpress!
+    </header>
+    <p>Search for a movie you would like to add to your cart.</p>
+    <form action="./search.php" method="post">
+        <label for="">Keyword</label>
+        <input type="text" name="keyword">
+        <button onclick="window.location.href = './index.php'">Cancel</button>
+        <button type="reset">Clear</button>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

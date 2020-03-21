@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Results</title>
+</head>
+<body>
+    <h3>Welcome <?php echo $_SESSION['displayname'];?></h3>
+    <a href="#" onclick="confirmLogout()">Logout</a>
+    <header>
+        myMovies Xpress!
+    </header>
+    <p><?php echo count($array);?> Movies Found</p>
+    <table>
+    <?php if (count($array) > 0) {
+        foreach ($array as $movie) {
+            $poster = $movie["Poster"];
+            $title = $movie["Title"];
+            $year = $movie["Year"];
+            $imdbId = $movie["imdbID"];
+            $titleYear = ($title . ' (' . $year . ')');
+
+            echo "<tr>";
+            echo "<td><img src='{$poster}' height='100'></td>";
+            echo "<td><a target='_blank' href='https://www.imdb.com/title/{$imdbId}'>{$titleYear}</a></td>";
+            echo "<td><a href='#' onclick='addMovie(`{$imdbId}`)'>+</a></td>";
+            echo "</tr>";
+        }
+
+    }  ?>
+
+    </table>
+    <button onclick="window.location.href = './index.php'">Cancel</button>
+</body>
+</html>

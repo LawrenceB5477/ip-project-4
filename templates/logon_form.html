@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <header>myMovies Xpress!</header>
+    <?php if (!empty($message)) {?>
+        <p><?php echo $message; ?></p>
+    <?php } ?>
+    <p>Please enter a username and password to login.</p>
+    <form action="./logon.php" method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" required>
+        <label for="password">Password</label>
+        <input type="password" name="password" required>
+        <button type="reset">Clear</button>
+        <button type="submit">Login</button>
+    </form>
+    <a href="">Link to ePortfolio</a>
+</body>
+</html>
